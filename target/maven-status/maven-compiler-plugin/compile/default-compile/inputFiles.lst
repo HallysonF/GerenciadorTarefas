@@ -1,0 +1,14 @@
+C:\Users\hally\Desktop\Projetos\gerenciatar\src\main\java\com\esig\gerenciatar\controller\ResponsavelController.java
+C:\Users\hally\Desktop\Projetos\gerenciatar\src\main\java\com\esig\gerenciatar\controller\AbstractFacade.java
+C:\Users\hally\Desktop\Projetos\gerenciatar\src\main\java\com\esig\gerenciatar\dto\ResponsavelJpaController.java
+C:\Users\hally\Desktop\Projetos\gerenciatar\src\main\java\com\esig\gerenciatar\controller\exceptions\PreexistingEntityException.java
+C:\Users\hally\Desktop\Projetos\gerenciatar\src\main\java\com\esig\gerenciatar\controller\exceptions\RollbackFailureException.java
+C:\Users\hally\Desktop\Projetos\gerenciatar\src\main\java\com\esig\gerenciatar\controller\util\JsfUtil.java
+C:\Users\hally\Desktop\Projetos\gerenciatar\src\main\java\com\esig\gerenciatar\entity\Responsavel.java
+C:\Users\hally\Desktop\Projetos\gerenciatar\src\main\java\com\esig\gerenciatar\controller\TarefasFacade.java
+C:\Users\hally\Desktop\Projetos\gerenciatar\src\main\java\com\esig\gerenciatar\controller\TarefasController.java
+C:\Users\hally\Desktop\Projetos\gerenciatar\src\main\java\com\esig\gerenciatar\controller\ResponsavelFacade.java
+C:\Users\hally\Desktop\Projetos\gerenciatar\src\main\java\com\esig\gerenciatar\dto\TarefasJpaController.java
+C:\Users\hally\Desktop\Projetos\gerenciatar\src\main\java\com\esig\gerenciatar\entity\Tarefas.java
+C:\Users\hally\Desktop\Projetos\gerenciatar\src\main\java\com\esig\gerenciatar\controller\exceptions\IllegalOrphanException.java
+C:\Users\hally\Desktop\Projetos\gerenciatar\src\main\java\com\esig\gerenciatar\controller\exceptions\NonexistentEntityException.java

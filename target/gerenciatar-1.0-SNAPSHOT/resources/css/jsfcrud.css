@@ -1,0 +1,39 @@
+.ui-widget {
+    font-size: 12px !important;
+}
+.ui-layout-north {
+    z-index: 20 !important;
+    overflow: visible !important;;
+}
+.ui-layout-north .ui-layout-unit-content {
+    overflow: visible !important;
+}
+.ui-widget-header {
+    text-align: center;
+    text-transform: uppercase;
+}
+.ui-button {
+    margin-top: 10px !important;
+}
+.btn-criar{
+    background-color:#2E8B57 !important;
+}
+.btn-editar{
+    background-color: #DAA520 !important;
+}
+.btn-visualizar{
+    background-color: #4682B4 !important;
+}
+.btn-deletar{
+    background-color: #B22222 !important;
+}
+
+.link-home{
+    float:left;
+    display: flex;
+    margin: 45px;
+    color: #B22222;  
+}
+.img-home{
+    margin-left: 20%;
+}
