@@ -1,4 +1,4 @@
-package com.esig.gerenciatar.controller.exceptions;
+package com.esig.gerenciatar.Dto.exceptions;
 
 public class NonexistentEntityException extends Exception {
     public NonexistentEntityException(String message, Throwable cause) {

@@ -20,7 +20,6 @@
                         <p:inputText id="descricao" value="#{tarefasController.selected.descricao}" title="#{bundle.EditTarefasTitle_descricao}" />
                         <p:outputLabel value="#{bundle.EditTarefasLabel_responsavel}" for="responsavel" />
                        <p:selectOneMenu id="responsavel" value="#{tarefasController.selected.responsavel}" title="#{bundle.EditTarefasTitle_responsavel}">
-                                <f:selectItem itemLabel="#{bundle.EditTarefasLabel_responsavel}" itemValue=""/>
                                 <f:selectItems value="#{responsavelController.items}" var="pessoa" itemLabel="#{pessoa.nome}" itemValue="#{pessoa.nome}"> </f:selectItems>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.EditTarefasLabel_prioridade}" for="prioridade" />

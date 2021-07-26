@@ -1,4 +1,4 @@
-package com.esig.gerenciatar.controller.exceptions;
+package com.esig.gerenciatar.Dto.exceptions;
 
 public class RollbackFailureException extends Exception {
     public RollbackFailureException(String message, Throwable cause) {

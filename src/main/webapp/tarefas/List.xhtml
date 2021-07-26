@@ -7,16 +7,15 @@
       xmlns:p="http://primefaces.org/ui">
 
     <ui:composition template="/template.xhtml">
+
+
         <ui:define name="title">
-            <h:outputText value="LISTAR TAREFAS"></h:outputText>
+            <h:outputText value="#{bundle.ListTarefasTitle}"></h:outputText>
         </ui:define>
+
         <ui:define name="body">
-            <h:form id="TarefasListForm">
-                    <div class="card">
-                    <p:graphicImage library="img" name="logo.png" width="200px"/>
-                    
-                        </div>
-                    <p:dataTable id="datalist" var="item" value="#{tarefasController.items}" 
+                <h:form id="TarefasListForm">
+                        <p:dataTable id="datalist" var="item" value="#{tarefasController.items}" 
                                  paginator="true" rows="5" widgetVar="itens" filteredValue="#{tarefasController.filtrotarefas}"
                                  selectionMode="single" selection="#{tarefasController.selected}" rowKey="#{item.id}"
                                  >
@@ -68,14 +67,14 @@
                             </f:facet>
                             <h:outputText value="#{item.prioridade}"/>
                         </p:column>
-                        <f:facet name="footer">
-                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="CRIAR" actionListener="#{tarefasController.prepareCreate}" update=":TarefasCreateForm" oncomplete="PF('TarefasCreateDialog').show()"/>
-                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="ATUALIZAR" update=":TarefasViewForm" oncomplete="PF('TarefasViewDialog').show()" disabled="#{empty tarefasController.selected}"/>
-                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="EDITAR" update=":TarefasEditForm" oncomplete="PF('TarefasEditDialog').show()" disabled="#{empty tarefasController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="DELETAR" actionListener="#{tarefasController.destroy}" update=":growl,datalist" disabled="#{empty tarefasController.selected}"/>
-                        </f:facet>
-                    </p:dataTable>
-            </h:form>
+                            <f:facet name="footer">
+                                <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{tarefasController.prepareCreate}" update=":TarefasCreateForm" oncomplete="PF('TarefasCreateDialog').show()"/>
+                                <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":TarefasViewForm" oncomplete="PF('TarefasViewDialog').show()" disabled="#{empty tarefasController.selected}"/>
+                                <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":TarefasEditForm" oncomplete="PF('TarefasEditDialog').show()" disabled="#{empty tarefasController.selected}"/>
+                                <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{tarefasController.destroy}" update=":growl,datalist" disabled="#{empty tarefasController.selected}"/>
+                            </f:facet>
+                        </p:dataTable>
+                </h:form>
 
             <ui:include src="Create.xhtml"/>
             <ui:include src="Edit.xhtml"/>

@@ -1,4 +1,4 @@
-package com.esig.gerenciatar.controller.exceptions;
+package com.esig.gerenciatar.Dto.exceptions;
 
 public class PreexistingEntityException extends Exception {
     public PreexistingEntityException(String message, Throwable cause) {

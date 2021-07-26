@@ -1,4 +1,4 @@
-package com.esig.gerenciatar.controller.exceptions;
+package com.esig.gerenciatar.Dto.exceptions;
 
 import java.util.ArrayList;
 import java.util.List;
