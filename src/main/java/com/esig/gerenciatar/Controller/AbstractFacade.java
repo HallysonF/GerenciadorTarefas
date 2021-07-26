@@ -5,60 +5,55 @@
  */
 package com.esig.gerenciatar.Controller;
 
-import java.util.List;
-import javax.persistence.EntityManager;
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
  * @author hally
  */
-public abstract class AbstractFacade<T> {
+@Entity
+public class AbstractFacade implements Serializable {
 
-    private Class<T> entityClass;
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-    public AbstractFacade(Class<T> entityClass) {
-        this.entityClass = entityClass;
+    public Long getId() {
+        return id;
     }
 
-    protected abstract EntityManager getEntityManager();
-
-    public void create(T entity) {
-        getEntityManager().persist(entity);
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void edit(T entity) {
-        getEntityManager().merge(entity);
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
     }
 
-    public void remove(T entity) {
-        getEntityManager().remove(getEntityManager().merge(entity));
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof AbstractFacade)) {
+            return false;
+        }
+        AbstractFacade other = (AbstractFacade) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
     }
 
-    public T find(Object id) {
-        return getEntityManager().find(entityClass, id);
-    }
-
-    public List<T> findAll() {
-        javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
-        cq.select(cq.from(entityClass));
-        return getEntityManager().createQuery(cq).getResultList();
-    }
-
-    public List<T> findRange(int[] range) {
-        javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
-        cq.select(cq.from(entityClass));
-        javax.persistence.Query q = getEntityManager().createQuery(cq);
-        q.setMaxResults(range[1] - range[0] + 1);
-        q.setFirstResult(range[0]);
-        return q.getResultList();
-    }
-
-    public int count() {
-        javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
-        javax.persistence.criteria.Root<T> rt = cq.from(entityClass);
-        cq.select(getEntityManager().getCriteriaBuilder().count(rt));
-        javax.persistence.Query q = getEntityManager().createQuery(cq);
-        return ((Long) q.getSingleResult()).intValue();
+    @Override
+    public String toString() {
+        return "com.esig.gerenciatar.Controller.AbstractFacade[ id=" + id + " ]";
     }
     
 }

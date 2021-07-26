@@ -1,69 +1,59 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.esig.gerenciatar.Controller.util;
 
-import java.util.List;
-import javax.faces.application.FacesMessage;
-import javax.faces.component.UIComponent;
-import javax.faces.context.FacesContext;
-import javax.faces.convert.Converter;
-import javax.faces.model.SelectItem;
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-public class JsfUtil {
+/**
+ *
+ * @author hally
+ */
+@Entity
+public class JsfUtil implements Serializable {
 
-    public static SelectItem[] getSelectItems(List<?> entities, boolean selectOne) {
-        int size = selectOne ? entities.size() + 1 : entities.size();
-        SelectItem[] items = new SelectItem[size];
-        int i = 0;
-        if (selectOne) {
-            items[0] = new SelectItem("", "---");
-            i++;
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof JsfUtil)) {
+            return false;
         }
-        for (Object x : entities) {
-            items[i++] = new SelectItem(x, x.toString());
+        JsfUtil other = (JsfUtil) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
         }
-        return items;
+        return true;
     }
 
-    public static boolean isValidationFailed() {
-        return FacesContext.getCurrentInstance().isValidationFailed();
+    @Override
+    public String toString() {
+        return "com.esig.gerenciatar.Controller.util.JsfUtil[ id=" + id + " ]";
     }
-
-    public static void addErrorMessage(Exception ex, String defaultMsg) {
-        String msg = ex.getLocalizedMessage();
-        if (msg != null && msg.length() > 0) {
-            addErrorMessage(msg);
-        } else {
-            addErrorMessage(defaultMsg);
-        }
-    }
-
-    public static void addErrorMessages(List<String> messages) {
-        for (String message : messages) {
-            addErrorMessage(message);
-        }
-    }
-
-    public static void addErrorMessage(String msg) {
-        FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_ERROR, msg, msg);
-        FacesContext.getCurrentInstance().addMessage(null, facesMsg);
-    }
-
-    public static void addSuccessMessage(String msg) {
-        FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, msg, msg);
-        FacesContext.getCurrentInstance().addMessage("successInfo", facesMsg);
-    }
-
-    public static String getRequestParameter(String key) {
-        return FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get(key);
-    }
-
-    public static Object getObjectFromRequestParameter(String requestParameterName, Converter converter, UIComponent component) {
-        String theId = JsfUtil.getRequestParameter(requestParameterName);
-        return converter.getAsObject(FacesContext.getCurrentInstance(), component, theId);
-    }
-
-    public static enum PersistAction {
-        CREATE,
-        DELETE,
-        UPDATE
-    }
+    
 }

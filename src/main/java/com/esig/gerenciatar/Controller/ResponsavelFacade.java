@@ -5,28 +5,55 @@
  */
 package com.esig.gerenciatar.Controller;
 
-import com.esig.gerenciatar.entity.Responsavel;
-import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
  * @author hally
  */
-@Stateless
-public class ResponsavelFacade extends AbstractFacade<Responsavel> {
+@Entity
+public class ResponsavelFacade implements Serializable {
 
-    @PersistenceContext(unitName = "com.esig_gerenciatar_war_1.0-SNAPSHOTPU")
-    private EntityManager em;
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-    @Override
-    protected EntityManager getEntityManager() {
-        return em;
+    public Long getId() {
+        return id;
     }
 
-    public ResponsavelFacade() {
-        super(Responsavel.class);
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof ResponsavelFacade)) {
+            return false;
+        }
+        ResponsavelFacade other = (ResponsavelFacade) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "com.esig.gerenciatar.Controller.ResponsavelFacade[ id=" + id + " ]";
     }
     
 }
