@@ -69,10 +69,10 @@
                             <h:outputText value="#{item.prioridade}"/>
                         </p:column>
                         <f:facet name="footer">
-                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{tarefasController.prepareCreate}" update=":TarefasCreateForm" oncomplete="PF('TarefasCreateDialog').show()"/>
-                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":TarefasViewForm" oncomplete="PF('TarefasViewDialog').show()" disabled="#{empty tarefasController.selected}"/>
-                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":TarefasEditForm" oncomplete="PF('TarefasEditDialog').show()" disabled="#{empty tarefasController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{tarefasController.destroy}" update=":growl,datalist" disabled="#{empty tarefasController.selected}"/>
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="CRIAR" actionListener="#{tarefasController.prepareCreate}" update=":TarefasCreateForm" oncomplete="PF('TarefasCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="ATUALIZAR" update=":TarefasViewForm" oncomplete="PF('TarefasViewDialog').show()" disabled="#{empty tarefasController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="EDITAR" update=":TarefasEditForm" oncomplete="PF('TarefasEditDialog').show()" disabled="#{empty tarefasController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="DELETAR" actionListener="#{tarefasController.destroy}" update=":growl,datalist" disabled="#{empty tarefasController.selected}"/>
                         </f:facet>
                     </p:dataTable>
             </h:form>
