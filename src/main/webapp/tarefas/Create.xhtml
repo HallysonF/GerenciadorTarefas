@@ -8,7 +8,7 @@
 
     <ui:composition>
 
-        <p:dialog id="TarefasCreateDlg" widgetVar="TarefasCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="CRIAR NOVA TAREFA">
+        <p:dialog id="TarefasCreateDlg" widgetVar="TarefasCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateTarefasTitle}">
             <h:form id="TarefasCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{tarefasController.selected != null}">
