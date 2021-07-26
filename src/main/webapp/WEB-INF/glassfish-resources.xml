@@ -27,4 +27,5 @@
     <jdbc-resource enabled="true" jndi-name="java:app/ConnectionH-JNDI" object-type="user" pool-name="post-gre-sql_d4q1scidd2fuc2_prfwopewrqqmnePool"/>
     <jdbc-resource enabled="true" jndi-name="java:app/JNDI-NOVO" object-type="user" pool-name="post-gre-sql_gdt_postgresPool"/>
     <jdbc-resource enabled="true" jndi-name="java:app/JNDI-HEROKU" object-type="user" pool-name="post-gre-sql_d4q1scidd2fuc2_prfwopewrqqmnePool"/>
+    <jdbc-resource enabled="true" jndi-name="java:app/JNDI-LOCAL" object-type="user" pool-name="post-gre-sql_gdt_postgresPool"/>
 </resources>
