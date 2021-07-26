@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TarefasCreateDlg" widgetVar="TarefasCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateTarefasTitle}">
+            <h:form id="TarefasCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{tarefasController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateTarefasLabel_titulo}" for="titulo" />
+                        <p:inputText id="titulo" value="#{tarefasController.selected.titulo}" title="#{bundle.CreateTarefasTitle_titulo}" />
+                        <p:outputLabel value="#{bundle.CreateTarefasLabel_descricao}" for="descricao" />
+                        <p:inputText id="descricao" value="#{tarefasController.selected.descricao}" title="#{bundle.CreateTarefasTitle_descricao}" />
+                        <p:outputLabel value="#{bundle.CreateTarefasLabel_responsavel}" for="responsavel" />
+                        <p:selectOneMenu id="responsavel" value="#{tarefasController.selected.responsavel}" title="#{bundle.CreateTarefasLabel_responsavel}">
+                                <f:selectItem itemLabel="Selecione" itemValue=""/>
+                                <f:selectItems value="#{responsavelController.items}" var="pessoa" itemLabel="#{pessoa.nome}" itemValue="#{pessoa.nome}"> </f:selectItems>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateTarefasLabel_prioridade}" for="prioridade" />
+                        <p:selectOneMenu id="prioridade" value="#{tarefasController.selected.prioridade}" title="#{bundle.CreateTarefasLabel_responsavel}">
+                                <f:selectItem itemLabel="Selecione" itemValue=""/>
+                                <f:selectItem itemLabel="Alta" itemValue="Alta"/>
+                                <f:selectItem itemLabel="Média" itemValue="Media"/>
+                                <f:selectItem itemLabel="Baixa" itemValue="Baixa"/>
+                    
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateTarefasLabel_dedline}" for="dedline" />
+                        <p:calendar id="dedline" value="#{tarefasController.selected.dedline}" title="#{bundle.CreateTarefasTitle_dedline}" mode="popup" pattern="dd.MM.yyyy" />
+                        </p:panelGrid>
+                    <p:commandButton actionListener="#{tarefasController.create}" value="Salvar" update="display,:TarefasListForm:datalist,:growl" oncomplete="handleSubmit(args,'TarefasCreateDialog');"/>
+                    <p:commandButton value="Cancelar" onclick="TarefasCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
