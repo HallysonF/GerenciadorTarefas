@@ -15,11 +15,13 @@
     </properties>
     
     <dependencies>
+    <!-- https://mvnrepository.com/artifact/com.sun.faces/jsf-api -->
     <dependency>
         <groupId>com.sun.faces</groupId>
-        <artifactId>jsf-impl</artifactId>
+        <artifactId>jsf-api</artifactId>
         <version>2.2.20</version>
     </dependency>
+
     
     <dependency>
         <groupId>javax.enterprise</groupId>
@@ -43,7 +45,6 @@
             <artifactId>primefaces</artifactId>
             <version>7.0</version>
         </dependency>
-        
         
         <dependency>
             <groupId>javax.servlet</groupId>
