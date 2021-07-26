@@ -69,7 +69,7 @@
                             <h:outputText value="#{item.prioridade}"/>
                         </p:column>
                         <f:facet name="footer">
-                            <p:commandButton id="createButton" icon="ui-icon-plus"   class="btn-criar"   value="CRIAR" actionListener="#{tarefasController.prepareCreate}" update=":TarefasCreateForm" oncomplete="PF('TarefasCreateDialog').show()"/>
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   class="btn-criar"   value="#{bundle.CreateTarefasTitle}" actionListener="#{tarefasController.prepareCreate}" update=":TarefasCreateForm" oncomplete="PF('TarefasCreateDialog').show()"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" class="btn-visualizar"  value="VISUALIZAR" update=":TarefasViewForm" oncomplete="PF('TarefasViewDialog').show()" disabled="#{empty tarefasController.selected}"/>
                             <p:commandButton id="editButton"   icon="ui-icon-pencil" class="btn-editar"  value="EDITAR" update=":TarefasEditForm" oncomplete="PF('TarefasEditDialog').show()" disabled="#{empty tarefasController.selected}"/>
                             <p:commandButton id="deleteButton" icon="ui-icon-trash"  class="btn-deletar" value="DELETAR" actionListener="#{tarefasController.destroy}" update=":growl,datalist" disabled="#{empty tarefasController.selected}"/>
