@@ -111,7 +111,7 @@ Para Desenvolvimento de todo o projeto foi utilizado o IDE Netbeans para mais in
 ## Banco de Dados
 
 
-##Pontos Positivos
+## Pontos Positivos
 
 - Aplicação Estrutura organizada e ajustada padrão MVC
 
@@ -123,13 +123,13 @@ Para Desenvolvimento de todo o projeto foi utilizado o IDE Netbeans para mais in
 
 - Deploy Heroku
 
-##Pontos Negativos
+## Pontos Negativos
 
 - Deploy no Heroku com paradas inesperadas pagína 404
 
 - css pouco trabalhado
 
-##Pontos a Melhorar
+## Pontos a Melhorar
 
 - Testes de unidades
 
