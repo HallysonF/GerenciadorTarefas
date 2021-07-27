@@ -9,7 +9,7 @@ Simples gerenciador de tarefas com funcionalidades:
 
 ## Cloud
 
-* [ Deploy Heroku ](https://personal-live.herokuapp.com/api/v1/people )
+* [ Deploy Heroku ](https://gerenciatar.herokuapp.com/ )
 
 ## Download do projeto
 
@@ -27,7 +27,13 @@ Para Executar a aplicação:
 $ mvn clean install
 
 ```
-para rodar o projeto: utilizar server de preferência
+para rodar o projeto: utilizar o server de preferência.
+- podera rodar a aplicação direto do terminal com o comando
+
+```bash
+web:    java $JAVA_OPTS -jar target/dependency/webapp-runner.jar --port $PORT target/*.war
+
+```
 
 - Usando IDE Apache Netbeans
 File -> open project -> Click com o botão direito do mouse sobre o projeto -> clean and build
@@ -41,6 +47,9 @@ click com botão direito do mouse sobre o projeto -> run
 ### Desenvolvimento da Aplicação
 
 Para o desenvolvimento da Aplicação web foi utilizado maven, jsf,  jpa, PrimeFaces PostgreSQL e para testes de unidades foi utilizado o Junit.
+- Maven 
+
+Apache Maven, ou Maven, é uma ferramenta de automação de compilação utilizada primariamente em projetos Java. Ela é similar à ferramenta Ant, mas é baseada em conceitos e trabalhos diferentes em um modo diferente. Também é utilizada para construir e gerenciar projetos escritos em C#, Ruby, Scala e outras linguagens. O projeto Maven é hospedado pela Apache Software Foundation, que fazia parte do antigo Projeto Jakarta.
 
 - Java
 
@@ -100,3 +109,32 @@ Esse framework facilita a criação e manutenção do código para a automação
 Para Desenvolvimento de todo o projeto foi utilizado o IDE Netbeans para mais informações
 * [Apache NetBeans](https://netbeans.apache.org/)
 ## Banco de Dados
+
+
+##Pontos Positivos
+
+- Aplicação Estrutura organizada e ajustada padrão MVC
+
+- Layout com primeFaces
+
+-Testes utilizando o Junit
+
+- Aplicação Funcional
+
+- Deploy Heroku
+
+##Pontos Negativos
+
+- Deploy no Heroku com paradas inesperadas pagína 404
+
+- css pouco trabalhado
+
+##Pontos a Melhorar
+
+- Testes de unidades
+
+- Layout
+
+- Folha de estilos
+
+- Organização das tabuações
