@@ -1,4 +1,4 @@
-# Projeto Gerencador de tarefas recrutamento DEV - ESIG GROUP
+# Projeto Gerenciador de tarefas recrutamento DEV - ESIG GROUP
 
 Simples gerenciador de tarefas com funcionalidades:
 
